@@ -1,0 +1,75 @@
+---
+interface Props {
+	title: string;
+    highlight:string;
+    body: string;
+}
+
+const { title, highlight, body } = Astro.props;
+---
+
+<div class="container-info">
+    <h1 class="title"><strong>{ title }</strong>{ highlight }</h1>
+    <p class="paragraph">{ body }</p>
+</div>
+<style>
+    .container-info{
+        width: 100%;
+        margin-bottom: 2.5rem; 
+        .title {        
+            width: 100%;      
+            text-align: left;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+
+        & > strong {
+            font-weight: 300;
+            color:var(--green);
+            }
+        }
+    .paragraph{
+        text-align: left;
+        width: 27.8125rem;
+        }
+    }
+    @media (width < 1280px){
+        .container-info{
+            .title {        
+                font-size: 48px;
+                line-height: 56px;
+                margin-bottom: 31px;
+                font-weight: 200;
+
+            & > strong {
+                font-weight: 200;
+                }
+            }
+        }
+    }
+    @media (width <= 675px){
+		.container-info{
+            width: 100%;
+            margin-bottom: 2.0625rem; 
+            .title {        
+                width: 100%;      
+                text-align: center;
+                font-size: 1.625rem;
+                line-height: 2.375rem;
+                margin-bottom: 1.5rem;
+                font-weight: 200;
+
+            & > strong {
+                font-weight: 200;
+                color:var(--green);
+                }
+            }
+        .paragraph{
+            text-align: center;
+            width: 100%;
+            font-size: 0.9375rem;
+            line-height: 25px;
+            }
+        }
+	}
+</style>
+    

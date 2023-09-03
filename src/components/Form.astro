@@ -1,0 +1,139 @@
+---
+interface Props {
+	placeholder: string;
+    titleButton:string;
+    class: string;
+}
+
+const { placeholder, titleButton, class: className} = Astro.props;
+---
+
+<script>
+    const btnSubmit = document.querySelector(".btn__form");
+    const statusForm = document.querySelector(".status-validation");
+    const emailForm = document.querySelector(".email__form") as HTMLInputElement;
+    const regulares: RegExp = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+
+    function enviar(){
+        const email = emailForm.value;
+        if (regulares.test(email)){
+            statusForm?.setAttribute("style", "color:trasnparent");
+        } else {
+            statusForm?.setAttribute("style", "color:red");
+        }
+    }
+
+    btnSubmit?.addEventListener("click", enviar)
+</script>
+
+<div class={className}>
+    <form action="#" novalidate>
+        <input class="email__form" type="email" autofocus placeholder={ placeholder }>
+        <button class="btn__form">{ titleButton }</button>
+    </form>
+    <p class="status-validation">Oops! Please check your email</p>
+</div>
+<style>
+    div{
+        width: 26.6875rem;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 2.625rem;
+
+        > form{
+            position: relative;
+            width: 100%;
+            background-color: var(--grey-blue);
+            border-radius: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+
+
+            > input{
+                background-color: inherit;
+                position: relative;
+                width: 60%;
+                padding: 14px 32px;
+                border: none;
+                outline: none;
+                border-radius: inherit;
+                font-weight: 700;
+                font-size: 0.875rem;
+                color: var(--white);
+                letter-spacing: 0.5px;
+            }
+
+            > button{
+                position: absolute;
+                right: 0.3125rem;
+                border-radius: inherit;
+                padding: 9px 27px;
+                border: none;
+                font-weight: 700;
+                font-size: 14px;
+                background-color: var(--green);
+                color: var(--dark-blue);
+                cursor: pointer;
+
+                &:hover{
+                    background-color: var(--color-hover);
+                }
+
+            }
+        }
+
+        > p{
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: transparent;
+            margin-left: 32px;
+            
+        }
+    }
+
+    @media (width <= 675px){
+        div{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 0;
+            margin-top: 48px;
+
+        > form{
+            position: relative;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 1rem;
+
+            > input{
+                background-color: var(--grey-blue);
+                position: relative;
+                width: 100%;
+                padding: 9px 32px;
+            }
+
+            > button{
+                width: 100%;
+                position: relative;
+                right: 0;
+                border-radius: inherit;
+                padding: 9px 0;
+            }
+        }
+
+        > p{
+            text-align: center;
+            color: transparent;
+            margin-left:0px;
+            
+            }
+        }
+    }
+</style>

@@ -1,0 +1,69 @@
+/*Global Fonts*/
+@font-face {
+  font-family: "Chivo";
+  src: url(../public/fonts/Chivo/Chivo-VariableFont_wght.ttf);
+  font-display: swap;
+}
+/* Global variables */
+:root {
+  /*Colors*/
+  --green: #54E6AF;
+  --grey-blue: #2C344B;
+  --dark-blue: #121725;
+  --white: #ffffff;
+  --steel-blue: #5A668A ;
+  --pale-cerulean:#C2CBE5;
+  --color-hover:#B3FFE2;
+  --color-status:red;
+
+  /*Font Shorthand*/
+  --font-heading: normal normal 300 3.25rem/3.875rem "Chivo";
+  --font-body: normal normal 300 1.125rem/1.75rem "Chivo";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  background-color: var(--dark-blue);
+  color: var(--white);
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  font: var(--font-heading);
+}
+
+p {
+  font: var(--font-body);
+}
+
+input,button{
+  font: var(--font-body);
+}
+
+main {
+    padding:130px 165px;
+  }
+  
+@media (width < 1280px){
+  main{
+    padding:257px 39px;
+  }
+}
+
+@media (width <= 675px){
+  main{
+    padding:0;
+  }
+}
