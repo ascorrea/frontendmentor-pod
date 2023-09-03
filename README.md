@@ -32,9 +32,9 @@ Users should be able to:
 
 ### Screenshot
 
-![Captura solución en escritorio](../public/pod-desktop.png)
-![Captura solución en tablet](../public/pod-tablet.png)
-![Captura solución en mobile](../public/pod-mobile.png)
+![Captura solución en escritorio](public/pod-desktop.png)
+![Captura solución en tablet](public/pod-tablet.png)
+![Captura solución en mobile](public/pod-mobile.png)
 
 ### Links
 

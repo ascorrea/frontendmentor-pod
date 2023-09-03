@@ -1,7 +1,7 @@
 /*Global Fonts*/
 @font-face {
   font-family: "Chivo";
-  src: url(../public/fonts/Chivo/Chivo-VariableFont_wght.ttf);
+  src: url(../../public/fonts/Chivo/Chivo-VariableFont_wght.ttf);
   font-display: swap;
 }
 /* Global variables */
